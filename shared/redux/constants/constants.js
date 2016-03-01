@@ -1,0 +1,1 @@
+export const INCREMENT_TICK = 'INCREMENT_TICK';
