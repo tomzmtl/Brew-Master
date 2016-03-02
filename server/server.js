@@ -32,6 +32,8 @@ import posts from './routes/post.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
+import { reducer } from '../shared/redux/reducers/reducer';
+
 // MongoDB Connection
 mongoose.connect(serverConfig.mongoURL, (error) => {
   if (error) {
@@ -86,9 +88,7 @@ app.use((req, res) => {
       return res.status(404).end('Not found!');
     }
 
-    const initialState = { posts: [], post: {} };
-
-    const store = configureStore(initialState);
+    const store = configureStore(reducer);
 
     fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
       .then(() => {

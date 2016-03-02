@@ -1,14 +1,12 @@
 import * as ActionTypes from '../constants/constants';
 
-const initialState = {};
-
-const myReducer = (state = initialState, action) => {
+const reducer = (state = {}, action) => {
   switch (action.type) {
-    case ActionTypes.ACTION_TYPE :
-      return {};
+    case ActionTypes.INCREMENT_TICK :
+      return Object.assign({}, state, { tick: state.tick + 1 });
     default:
       return state;
   }
 };
 
-export default myReducer;
+export default reducer;

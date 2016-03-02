@@ -3,9 +3,10 @@ import * as ActionTypes from '../constants/constants';
 
 // const baseURL = typeof window === 'undefined' ? process.env.BASE_URL || (`http://localhost:${(process.env.PORT || 8000)}`) : '';
 
-
-export function incrementTick() {
+const incrementTick = () => {
   return {
     type: ActionTypes.INCREMENT_TICK,
   };
-}
+};
+
+export { incrementTick };

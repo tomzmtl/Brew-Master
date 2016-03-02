@@ -3,7 +3,9 @@ import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/reducer';
 
-export function configureStore(initialState = {}) {
+const initState = { tick: 1 };
+
+export function configureStore(initialState = initState) {
   let finalCreateStore;
 
   if (process.env.CLIENT) {

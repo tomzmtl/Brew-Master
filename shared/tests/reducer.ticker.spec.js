@@ -1,5 +1,5 @@
 import expect from 'expect';
-import addTick from '../redux/reducers/ticker';
+import addTick from '../redux/reducers/reducer';
 import deepFreeze from 'deep-freeze';
 import * as ActionTypes from '../redux/constants/constants';
 
