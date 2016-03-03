@@ -2,13 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/reducer';
-
-const initState = {
-  tick: 1,
-  facility: {
-    storage: 0,
-  },
-};
+import initState from './initialState';
 
 export function configureStore(initialState = initState) {
   let finalCreateStore;

@@ -1,4 +1,4 @@
-import * as ActionTypes from '../constants/constants';
+import * as ActionTypes from '../constants/actionTypes';
 // import fetch from 'isomorphic-fetch';
 
 // const baseURL = typeof window === 'undefined' ? process.env.BASE_URL || (`http://localhost:${(process.env.PORT || 8000)}`) : '';
@@ -9,13 +9,13 @@ const incrementTick = () => {
   };
 };
 
-const produceBeer = () => {
+const storeBeer = () => {
   return {
-    type: ActionTypes.PRODUCE_BEER,
+    type: ActionTypes.STORE_BEER,
   };
 };
 
 export {
   incrementTick,
-  produceBeer,
+  storeBeer,
 };

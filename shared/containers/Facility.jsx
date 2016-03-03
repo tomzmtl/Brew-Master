@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Facility from '../components/facility/Facility';
+import { storeBeer } from '../redux/actions/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -7,4 +8,14 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Facility);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onEquipmentBtnClick: () => {
+      dispatch(storeBeer());
+    },
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps)(Facility);

@@ -1,12 +1,14 @@
 import expect from 'expect';
 import addTick from '../redux/reducers/reducer';
 import deepFreeze from 'deep-freeze';
-import * as ActionTypes from '../redux/constants/constants';
+import * as ActionTypes from '../redux/constants/actionTypes';
 
-describe('reducer tests', () => {
-  it('action INCREMENT_TICK is working', () => {
-    const stateBefore = { tick: 0 };
-    const stateAfter = { tick: 1 };
+import mockStore from './_mocks/store';
+
+describe('Ticker', () => {
+  it('increments', () => {
+    const stateBefore = mockStore();
+    const stateAfter = mockStore({ tick: 2 });
     const action = { type: ActionTypes.INCREMENT_TICK };
     deepFreeze(stateBefore);
     deepFreeze(action);
