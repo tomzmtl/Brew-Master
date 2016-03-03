@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Ticker from '../components/ticker/Ticker';
+import StatusBar from '../components/StatusBar/StatusBar';
 import { incrementTick } from '../redux/actions/actions';
 
 const mapStateToProps = (state) => {
@@ -16,9 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const StatusBar = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Ticker);
-
-export default StatusBar;
+)(StatusBar);
