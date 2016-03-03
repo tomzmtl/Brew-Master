@@ -1,0 +1,20 @@
+# Release Alpha 2 scope and specs
+
+## Wallet phase 1
+
+* Add a wallet counter component to status bar.
+* Add a "Sell" button to status bar.
+* Clicking on the button will empty the storage unit and sell all the beers.
+* Price of beer will be fixed.
+
+## Store
+
+```
+{
+  wallet : NUMBER
+}
+```
+
+## Constants
+
+* `BEER_PRICE` (number)

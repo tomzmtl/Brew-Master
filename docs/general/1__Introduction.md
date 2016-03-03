@@ -1,13 +1,14 @@
-# Brewmeister, a game about brewing beer!
+# Brew Master, a game about brewing beer!
 
 ## Introduction
 
-Brewmeister is a game about managing a micro brewery.
+Brew Master is a game about managing a micro brewery.
 The main goal is to setup the ultimate brewing installation, winning awards and getting rich by brewing a large variety of beers!
 The game will contain some rogue-inspired elements, like randomized marketplace, perks or events.
 
-This document is an overview of the basic goals and mechanisms of the game.
-Make sure to read the other documents for details.
+Brewing beer is a complex task, and probably requires a lifetime to master.
+Brew Master will feature a simplified, streamlined version of this process to leave some place to fun.
+That said, we will try to stay genuine to the art of brewing, as long as we can keep the gameplay simple.
 
 ## Main actions and goals
 

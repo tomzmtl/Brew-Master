@@ -4,14 +4,14 @@
 
 ### Status
 
-Writing specs. See `docs` folder.
+Writing specs. See the [docs](https://github.com/tomzmtl/Brew-Master/tree/master/docs) folder.
 
 
 ### Roadmap
 
-**Current target:** Alpha 1
+**Next release:** Alpha 1
 
-See anticipated goals of future releases in `docs/0__Roadmap.md`;
+See release and roadmap details in the [Roadmap documentation](https://github.com/tomzmtl/Brew-Master/blob/master/docs/0__Roadmap.md)
 
 
 ### Technology stack
