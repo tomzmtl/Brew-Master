@@ -3,7 +3,12 @@ import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/reducer';
 
-const initState = { tick: 1 };
+const initState = {
+  tick: 1,
+  facility: {
+    storage: 0,
+  },
+};
 
 export function configureStore(initialState = initState) {
   let finalCreateStore;

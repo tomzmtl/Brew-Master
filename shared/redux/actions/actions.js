@@ -9,4 +9,13 @@ const incrementTick = () => {
   };
 };
 
-export { incrementTick };
+const produceBeer = () => {
+  return {
+    type: ActionTypes.PRODUCE_BEER,
+  };
+};
+
+export {
+  incrementTick,
+  produceBeer,
+};
