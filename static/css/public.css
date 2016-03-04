@@ -17,12 +17,26 @@ body {
     text-align: center; }
     .facility .equipment .name {
       margin-bottom: 8px; }
+    .facility .equipment.storage li {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 1px;
+      background: white;
+      opacity: 0.1; }
+      .facility .equipment.storage li.full {
+        opacity: 1; }
 
 button {
   padding: 10px;
   background: #1b150a;
   color: white;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
   button:hover {
     background: #0f0c06; }
+  button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background: #171717; }
