@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
 const StorageUnit = ({ storage }) => (
-  <div className="storage">
-    <span>Storage Unit</span>
+  <div className="storage equipment">
+    <div className="name">Storage Unit</div>
     <strong>{storage}</strong>
   </div>
 );

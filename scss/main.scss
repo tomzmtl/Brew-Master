@@ -1,0 +1,43 @@
+body {
+  background: #332918;
+  color: white;
+}
+
+.status-bar {
+  padding: 20px;
+  background: #1b150a;
+}
+
+.facility {
+  display: flex;
+  margin-top: 20px;
+
+  .equipment {
+    padding: 20px;
+    margin: auto;
+    justify-content: space-around;
+    background: #261f12;
+    text-align: center;
+
+    .name {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+button {
+  padding: 10px;
+  background: #1b150a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: #0f0c06;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}

@@ -2,8 +2,7 @@ import React from 'react';
 
 const Equipment = ({ onBtnClick }) => (
   <div className="equipment">
-    <span>Generic Facility Equipment</span>
-    <br/>
+    <div className="name">Generic Facility Equipment</div>
     <button onClick={onBtnClick}>
       Produce beer!
     </button>
