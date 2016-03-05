@@ -4,7 +4,7 @@ import Ticker from './Ticker';
 
 const StatusBar = (props) => (
   <div className="status-bar">
-    <Ticker {...props} />
+    {/* <Ticker {...props} /> */}
   </div>
 );
 
