@@ -1,5 +1,5 @@
 import expect from 'expect';
-import addTick from '../redux/reducers/reducer';
+import reducer from '../redux/reducers/reducer';
 import deepFreeze from 'deep-freeze';
 import * as ActionTypes from '../redux/constants/actionTypes';
 
@@ -12,6 +12,6 @@ describe('Ticker', () => {
     const action = { type: ActionTypes.INCREMENT_TICK };
     deepFreeze(stateBefore);
     deepFreeze(action);
-    expect(stateAfter).toEqual(addTick(stateBefore, action));
+    expect(stateAfter).toEqual(reducer(stateBefore, action));
   });
 });

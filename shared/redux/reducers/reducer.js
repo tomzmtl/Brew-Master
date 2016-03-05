@@ -15,6 +15,12 @@ const reducer = (state = {}, action) => {
       }
       return Object.assign({}, state, { facility: { storage: facility.storage + 1 } });
 
+    case ActionTypes.SELL_BEER:
+      return Object.assign({}, state, {
+        facility: { storage: 0 },
+        wallet: state.wallet + (action.quantity * gameConstants.BEER_PRICE),
+      });
+
     default:
       return state;
   }

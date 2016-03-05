@@ -15,7 +15,15 @@ const storeBeer = () => {
   };
 };
 
+const sellBeer = (quantity) => {
+  return {
+    type: ActionTypes.SELL_BEER,
+    quantity,
+  };
+};
+
 export {
   incrementTick,
   storeBeer,
+  sellBeer,
 };
