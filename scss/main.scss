@@ -4,8 +4,14 @@ body {
 }
 
 .status-bar {
+  display: flex;
+  justify-content: space-around;
   padding: 20px;
   background: #1b150a;
+
+  > div {
+    margin: auto;
+  }
 }
 
 .facility {
