@@ -1,12 +1,17 @@
 import React, { PropTypes } from 'react';
-import * as gameConstants from '../../redux/constants/gameConstants';
+import * as GAME from '../../redux/constants/gameConstants';
 
-const StorageUnit = (props) => {
+function _buildStorageItems(count) {
   const items = [];
-  for (let i = 1; i <= gameConstants.STORAGE_LIMIT; i++) {
-    const className = props.storage >= i ? 'full' : 'empty';
+  for (let i = 1; i <= GAME.STORAGE_LIMIT; i++) {
+    const className = count >= i ? 'full' : null;
     items.push((<li className={className} key={i}></li>));
   }
+  return items;
+}
+
+const StorageUnit = (props) => {
+  const items = _buildStorageItems(props.storage);
   const btnDisabled = props.storage === 0;
 
   return (

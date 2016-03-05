@@ -31,6 +31,7 @@ body {
         margin: 0 1px;
         background: white;
         opacity: 0.1;
+        transition: opacity 100ms ease-out;
 
         &.full {
           opacity: 1;
