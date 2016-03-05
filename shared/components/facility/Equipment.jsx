@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Equipment = ({ onBtnClick, btnDisabled }) => {
+const Equipment = (props) => {
   const btn = {
     props: {
-      disabled: btnDisabled,
-      onClick: onBtnClick,
+      disabled: props.btnDisabled,
+      onClick: props.onBtnClick,
     },
-    text: btnDisabled ? 'Storage full!' : 'Produce beer!',
+    text: props.btnDisabled ? 'Storage full!' : 'Produce beer!',
   };
 
   return (

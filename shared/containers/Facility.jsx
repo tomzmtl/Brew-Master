@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Facility from '../components/Facility/Facility';
-import { storeBeer } from '../redux/actions/actions';
+import { storeBeer, sellBeer } from '../redux/actions/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onEquipmentBtnClick: () => {
       dispatch(storeBeer());
+    },
+    onSellBtnClick: (qty) => {
+      dispatch(sellBeer(qty));
     },
   };
 };

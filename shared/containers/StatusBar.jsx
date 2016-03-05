@@ -5,6 +5,7 @@ import { incrementTick } from '../redux/actions/actions';
 const mapStateToProps = (state) => {
   return {
     tick: state.tick,
+    wallet: state.wallet,
   };
 };
 

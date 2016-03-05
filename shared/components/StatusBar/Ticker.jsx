@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 const Ticker = ({ tick, onBtnClick }) => (
   <div className="ticker">
@@ -6,10 +6,5 @@ const Ticker = ({ tick, onBtnClick }) => (
     <button onClick={onBtnClick}>Next tick</button>
   </div>
 );
-
-Ticker.propTypes = {
-  onBtnClick: PropTypes.func.isRequired,
-  tick: PropTypes.number.isRequired,
-};
 
 export default Ticker;
