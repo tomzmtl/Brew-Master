@@ -7,7 +7,7 @@ import StorageUnit from './StorageUnit';
 const Facility = (props) => {
   const equipmentProps = {
     onBtnClick: props.onEquipmentBtnClick,
-    btnDisabled: props.storage >= gameConstants.STORAGE_LIMIT,
+    btnDisabled: props.storage.length >= gameConstants.STORAGE_LIMIT,
   };
 
   const storageProps = {
@@ -24,7 +24,7 @@ const Facility = (props) => {
 
 Facility.propTypes = {
   onEquipmentBtnClick: PropTypes.func.isRequired,
-  storage: PropTypes.number.isRequired,
+  storage: PropTypes.array.isRequired,
 };
 
 export default Facility;
