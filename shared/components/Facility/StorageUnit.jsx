@@ -12,20 +12,17 @@ function _buildStorageItems(count) {
 
 const StorageUnit = (props) => {
   const items = _buildStorageItems(props.storage);
-  const btnDisabled = props.storage === 0;
 
   return (
     <div className="storage equipment">
       <div className="name">Storage Unit</div>
       <ul>{items}</ul>
-      <button disabled={btnDisabled} onClick={props.onBtnClick}>Sell!</button>
     </div>
   );
 };
 
 StorageUnit.propTypes = {
   storage: PropTypes.number.isRequired,
-  onBtnClick: PropTypes.func.isRequired,
 };
 
 export default StorageUnit;

@@ -12,7 +12,6 @@ const Facility = (props) => {
 
   const storageProps = {
     storage: props.storage,
-    onBtnClick: () => props.onSellBtnClick(props.storage),
   };
 
   return (
@@ -24,7 +23,6 @@ const Facility = (props) => {
 };
 
 Facility.propTypes = {
-  onSellBtnClick: PropTypes.func.isRequired,
   onEquipmentBtnClick: PropTypes.func.isRequired,
   storage: PropTypes.number.isRequired,
 };
