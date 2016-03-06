@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onEquipmentBtnClick: () => {
-      dispatch(storeBeer());
+    onEquipmentBtnClick: (beer) => {
+      dispatch(storeBeer(beer));
     },
   };
 };
