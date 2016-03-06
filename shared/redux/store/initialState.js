@@ -1,6 +1,6 @@
 const state = {
   facility: {
-    storage: 0,
+    storage: [],
   },
   tick: 1,
   wallet: 0,

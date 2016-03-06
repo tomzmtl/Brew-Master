@@ -9,9 +9,10 @@ const incrementTick = () => {
   };
 };
 
-const storeBeer = () => {
+const storeBeer = (beer) => {
   return {
     type: ActionTypes.STORE_BEER,
+    beer,
   };
 };
 

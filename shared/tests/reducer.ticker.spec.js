@@ -6,19 +6,24 @@ import * as ACTIONS from '../redux/constants/actionTypes';
 import * as GAME from '../redux/constants/gameConstants';
 
 import mockStore from './_mocks/store';
+import { mockBeerSet } from './_mocks/beer';
 
 describe('Ticker', () => {
+
   it('increments', () => {
     const stateBefore = mockStore();
     const stateAfter = mockStore({ tick: 2 });
+
     const action = { type: ACTIONS.INCREMENT_TICK };
+
     deepFreeze(stateBefore);
     deepFreeze(action);
+
     expect(stateAfter).toEqual(reducer(stateBefore, action));
   });
 
   it('sells all beer on appropriate interval', () => {
-    const storage = 3;
+    const storage = mockBeerSet(3);
     const stateBefore = mockStore({
       tick: 4,
       facility: { storage },
@@ -26,18 +31,21 @@ describe('Ticker', () => {
     const stateAfter = mockStore({
       tick: 5,
       facility: {
-        storage: 0,
+        storage: [],
       },
-      wallet: GAME.BEER_PRICE * storage,
+      wallet: storage.length * GAME.BEER_PRICE,
     });
+
     const action = { type: ACTIONS.INCREMENT_TICK };
+
     deepFreeze(stateBefore);
     deepFreeze(action);
+
     expect(stateAfter).toEqual(reducer(stateBefore, action));
   });
 
   it('doesn\'t sell beer otherwise', () => {
-    const storage = 3;
+    const storage = mockBeerSet(3);
     const wallet = 100;
     const stateBefore = mockStore({
       tick: 5,
@@ -49,9 +57,12 @@ describe('Ticker', () => {
       facility: { storage },
       wallet,
     });
+
     const action = { type: ACTIONS.INCREMENT_TICK };
+
     deepFreeze(stateBefore);
     deepFreeze(action);
+
     expect(stateAfter).toEqual(reducer(stateBefore, action));
   });
 });

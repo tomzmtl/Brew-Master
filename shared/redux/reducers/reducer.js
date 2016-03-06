@@ -17,10 +17,14 @@ const reducer = (state = {}, action) => {
       return Object.assign({}, state, update);
 
     case ActionTypes.STORE_BEER:
-      if (facility.storage >= GAME.STORAGE_LIMIT) {
+      if (facility.storage.length >= GAME.STORAGE_LIMIT) {
         return state;
       }
-      return Object.assign({}, state, { facility: { storage: facility.storage + 1 } });
+      return Object.assign({}, state, {
+        facility: {
+          storage: [...facility.storage, action.beer],
+        },
+      });
 
     case ActionTypes.SELL_BEER:
       return Object.assign({}, state, sellBeer(state));
