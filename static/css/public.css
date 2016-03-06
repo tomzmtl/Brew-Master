@@ -26,9 +26,9 @@ body {
       width: 20px;
       height: 20px;
       margin: 0 1px;
-      background: white;
       opacity: 0.1;
-      transition: opacity 100ms ease-out; }
+      background-color: white;
+      transition: 100ms ease-out; }
       .facility .equipment.storage li.full {
         opacity: 1; }
 

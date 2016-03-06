@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 import * as gameConstants from '../../redux/constants/gameConstants';
-import beerFactory from '../../../game/models/beer';
+import { randomBeer } from '../../tests/_mocks/beer';
 
 import Equipment from './Equipment';
 import StorageUnit from './StorageUnit';
 
 const Facility = (props) => {
   const equipmentProps = {
-    onBtnClick: () => props.onEquipmentBtnClick(beerFactory('Test Ale', 'yellow', 5, 30)),
+    onBtnClick: () => props.onEquipmentBtnClick(randomBeer()),
     btnDisabled: props.storage.length >= gameConstants.STORAGE_LIMIT,
   };
 
