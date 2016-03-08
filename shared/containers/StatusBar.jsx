@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import StatusBar from '../components/StatusBar/StatusBar';
-import { incrementTick } from '../redux/actions/actions';
+import { incrementTick } from '../actions/actions';
 
 const mapStateToProps = (state) => {
   return {

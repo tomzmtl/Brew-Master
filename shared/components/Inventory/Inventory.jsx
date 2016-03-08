@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import * as GAME from '../../redux/constants/gameConstants';
+import * as GAME from '../../constants/gameConstants';
 
 function _populateItems(propItems) {
   const items = [];

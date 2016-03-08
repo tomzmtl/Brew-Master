@@ -1,9 +1,9 @@
 import expect from 'expect';
-import reducer from '../redux/reducers/reducer';
+import reducer from '../reducers/reducer';
 import deepFreeze from 'deep-freeze';
 
-import * as ACTIONS from '../redux/constants/actionTypes';
-import * as GAME from '../redux/constants/gameConstants';
+import * as ACTIONS from '../constants/actionTypes';
+import * as GAME from '../constants/gameConstants';
 
 import mockStore from './_mocks/store';
 import { mockBeerSet } from './_mocks/beer';

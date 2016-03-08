@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import * as GAME from '../../redux/constants/gameConstants';
+import * as GAME from '../../constants/gameConstants';
 import { randomBeer } from '../../tests/_mocks/beer';
 
 import Equipment from './Equipment';

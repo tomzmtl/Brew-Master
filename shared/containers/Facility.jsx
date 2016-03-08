@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Facility from '../components/Facility/Facility';
-import { storeBeer } from '../redux/actions/actions';
+import { storeBeer } from '../actions/actions';
 
 const mapStateToProps = (state) => {
   return {

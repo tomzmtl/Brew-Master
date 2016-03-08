@@ -1,4 +1,4 @@
-import store from '../../redux/store/initialState';
+import store from '../../store/initialState';
 
 const mockStore = (override = {}) => {
   return Object.assign({}, store, override);

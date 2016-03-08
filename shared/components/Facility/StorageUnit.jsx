@@ -1,5 +1,5 @@
 import React from 'react';
-import * as GAME from '../../redux/constants/gameConstants';
+import * as GAME from '../../constants/gameConstants';
 
 function _buildStorageItems(storage) {
   const items = [];

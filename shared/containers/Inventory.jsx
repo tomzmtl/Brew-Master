@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Inventory from '../components/Inventory/Inventory';
-import { addInventoryItem } from '../redux/actions/actions';
+import { addInventoryItem } from '../actions/actions';
 
 const mapStateToProps = (state) => {
   return {

@@ -19,7 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // React And Redux Setup
-import { configureStore } from '../shared/redux/store/configureStore';
+import { configureStore } from '../shared/store/configureStore';
 import { Provider } from 'react-redux';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -32,7 +32,7 @@ import posts from './routes/post.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
-import { reducer } from '../shared/redux/reducers/reducer';
+import { reducer } from '../shared/reducers/reducer';
 
 // MongoDB Connection
 mongoose.connect(serverConfig.mongoURL, (error) => {
