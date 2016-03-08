@@ -1,31 +1,31 @@
-import * as ActionTypes from '../constants/actionTypes';
+import * as ACTIONS from '../constants/actionTypes';
 // import fetch from 'isomorphic-fetch';
 
 // const baseURL = typeof window === 'undefined' ? process.env.BASE_URL || (`http://localhost:${(process.env.PORT || 8000)}`) : '';
 
 const incrementTick = () => {
   return {
-    type: ActionTypes.INCREMENT_TICK,
+    type: ACTIONS.INCREMENT_TICK,
   };
 };
 
 const storeBeer = (beer) => {
   return {
-    type: ActionTypes.STORE_BEER,
+    type: ACTIONS.STORE_BEER,
     beer,
   };
 };
 
 const sellBeer = (quantity) => {
   return {
-    type: ActionTypes.SELL_BEER,
+    type: ACTIONS.SELL_BEER,
     quantity,
   };
 };
 
 const addInventoryItem = (item) => {
   return {
-    type: ActionTypes.ADD_INVENTORY_ITEM,
+    type: ACTIONS.ADD_INVENTORY_ITEM,
     item,
   };
 };

@@ -1,4 +1,4 @@
-import * as ActionTypes from '../constants/actionTypes';
+import * as ACTIONS from '../constants/actionTypes';
 import * as GAME from '../constants/gameConstants';
 import sellBeer from './helpers/sellBeer';
 
@@ -7,7 +7,7 @@ const reducer = (state = {}, action) => {
 
   switch (action.type) {
 
-    case ActionTypes.INCREMENT_TICK:
+    case ACTIONS.INCREMENT_TICK:
       let update = { tick: state.tick + 1 };
 
       if (update.tick % GAME.SALE_INTERVAL === 0) {
@@ -16,7 +16,7 @@ const reducer = (state = {}, action) => {
 
       return Object.assign({}, state, update);
 
-    case ActionTypes.STORE_BEER:
+    case ACTIONS.STORE_BEER:
       if (facility.storage.length >= GAME.STORAGE_LIMIT) {
         return state;
       }
@@ -26,10 +26,10 @@ const reducer = (state = {}, action) => {
         },
       });
 
-    case ActionTypes.SELL_BEER:
+    case ACTIONS.SELL_BEER:
       return Object.assign({}, state, sellBeer(state));
 
-    case ActionTypes.ADD_INVENTORY_ITEM:
+    case ACTIONS.ADD_INVENTORY_ITEM:
       if (inventory.items.length >= GAME.INVENTORY_LIMIT) {
         return state;
       }

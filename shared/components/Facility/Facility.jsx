@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import * as gameConstants from '../../redux/constants/gameConstants';
+import * as GAME from '../../redux/constants/gameConstants';
 import { randomBeer } from '../../tests/_mocks/beer';
 
 import Equipment from './Equipment';
@@ -8,7 +8,7 @@ import StorageUnit from './StorageUnit';
 const Facility = (props) => {
   const equipmentProps = {
     onBtnClick: () => props.onEquipmentBtnClick(randomBeer()),
-    btnDisabled: props.storage.length >= gameConstants.STORAGE_LIMIT,
+    btnDisabled: props.storage.length >= GAME.STORAGE_LIMIT,
   };
 
   const storageProps = {
