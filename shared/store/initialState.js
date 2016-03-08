@@ -5,6 +5,7 @@ const state = {
   inventory: {
     items: [],
   },
+  modal: null,
   tick: 1,
   wallet: 0,
 };

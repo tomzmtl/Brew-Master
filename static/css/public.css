@@ -2,6 +2,18 @@ body {
   background: #332918;
   color: white; }
 
+.root {
+  position: relative;
+  height: 100vh; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75); }
+
 li {
   list-style-type: none; }
 

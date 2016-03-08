@@ -30,9 +30,24 @@ const addInventoryItem = (item) => {
   };
 };
 
+const openModal = (modal) => {
+  return {
+    type: ACTIONS.OPEN_MODAL,
+    modal,
+  };
+};
+
+const closeModal = () => {
+  return {
+    type: ACTIONS.CLOSE_MODAL,
+  };
+};
+
 export {
   incrementTick,
   storeBeer,
   sellBeer,
   addInventoryItem,
+  openModal,
+  closeModal,
 };

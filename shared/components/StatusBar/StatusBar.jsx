@@ -6,6 +6,7 @@ import Wallet from './Wallet';
 const StatusBar = (props) => (
   <div className="status-bar">
     <Ticker tick={props.tick} onBtnClick={props.onBtnClick} />
+    <button onClick={props.onOpenMarketplaceClick}>Open marketplace</button>
     <Wallet amount={props.wallet} />
   </div>
 );

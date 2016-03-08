@@ -39,6 +39,12 @@ const reducer = (state = {}, action) => {
         },
       });
 
+    case ACTIONS.OPEN_MODAL:
+      return Object.assign({}, state, { modal: action.modal });
+
+    case ACTIONS.CLOSE_MODAL:
+      return Object.assign({}, state, { modal: null });
+
     default:
       return state;
   }
