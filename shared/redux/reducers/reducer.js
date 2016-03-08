@@ -3,7 +3,7 @@ import * as GAME from '../constants/gameConstants';
 import sellBeer from './helpers/sellBeer';
 
 const reducer = (state = {}, action) => {
-  const { facility } = state;
+  const { facility, inventory } = state;
 
   switch (action.type) {
 
@@ -28,6 +28,16 @@ const reducer = (state = {}, action) => {
 
     case ActionTypes.SELL_BEER:
       return Object.assign({}, state, sellBeer(state));
+
+    case ActionTypes.ADD_INVENTORY_ITEM:
+      if (inventory.items.length >= GAME.INVENTORY_LIMIT) {
+        return state;
+      }
+      return Object.assign({}, state, {
+        inventory: {
+          items: [...inventory.items, action.item],
+        },
+      });
 
     default:
       return state;

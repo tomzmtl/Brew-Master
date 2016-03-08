@@ -23,8 +23,16 @@ const sellBeer = (quantity) => {
   };
 };
 
+const addInventoryItem = (item) => {
+  return {
+    type: ActionTypes.ADD_INVENTORY_ITEM,
+    item,
+  };
+};
+
 export {
   incrementTick,
   storeBeer,
   sellBeer,
+  addInventoryItem,
 };
