@@ -2,6 +2,9 @@ body {
   background: #332918;
   color: white; }
 
+li {
+  list-style-type: none; }
+
 .status-bar {
   display: flex;
   justify-content: space-around;
@@ -31,6 +34,28 @@ body {
       transition: 100ms ease-out; }
       .facility .equipment.storage li.full {
         opacity: 1; }
+
+.inventory {
+  padding: 20px;
+  margin-top: 50px;
+  background: #1b150a; }
+  .inventory ul {
+    margin: 0 auto;
+    text-align: center; }
+  .inventory li {
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+    background: #261f12; }
+    .inventory li > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: inherit;
+      background: white;
+      color: black; }
 
 button {
   padding: 10px;

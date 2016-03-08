@@ -8,7 +8,7 @@ function _populateItems(propItems) {
     let content = null;
     const item = propItems[i - 1];
 
-    if (items.length >= i) {
+    if (propItems.length >= i) {
       content = (<div>{item.name}</div>);
     }
 
