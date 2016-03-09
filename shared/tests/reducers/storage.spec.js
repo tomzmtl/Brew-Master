@@ -1,12 +1,12 @@
 import expect from 'expect';
-import reducer from '../reducers/reducer';
 import deepFreeze from 'deep-freeze';
+import reducer from '../../reducers/reducer';
 
-import * as ACTIONS from '../constants/actionTypes';
-import * as GAME from '../constants/gameConstants';
+import * as ACTIONS from '../../constants/actionTypes';
+import * as GAME from '../../constants/gameConstants';
 
-import mockStore from './_mocks/store';
-import { mockBeer, mockBeerSet } from './_mocks/beer';
+import mockStore from '../_mocks/store';
+import { mockBeer, mockBeerSet } from '../_mocks/beer';
 
 describe('StorageUnit', () => {
 

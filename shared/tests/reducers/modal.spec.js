@@ -1,15 +1,15 @@
 import expect from 'expect';
-import reducer from '../reducers/reducer';
 import deepFreeze from 'deep-freeze';
+import reducer from '../../reducers/reducer';
 
-import * as ACTIONS from '../constants/actionTypes';
+import * as ACTIONS from '../../constants/actionTypes';
 
-import mockStore from './_mocks/store';
+import mockStore from '../_mocks/store';
 
-describe('Marketplace', () => {
+describe('Modal', () => {
 
-  it('opens (modal)', () => {
-    const modal = 'Marketplace';
+  it('opens', () => {
+    const modal = 'TestModal';
     const stateBefore = mockStore();
     const stateAfter = mockStore({
       modal,
@@ -26,13 +26,12 @@ describe('Marketplace', () => {
     expect(stateAfter).toEqual(reducer(stateBefore, action));
   });
 
-  it('closes (modal)', () => {
-    const modal = null;
+  it('closes', () => {
     const stateBefore = mockStore({
-      modal: 'Marketplace',
+      modal: 'TestModal',
     });
     const stateAfter = mockStore({
-      modal,
+      modal: null,
     });
 
     const action = {
