@@ -77,15 +77,12 @@ It could also provide extra perks, like increasing the quantity you can produce 
 Each of these represents a step in the process, the end resulting in a batch.
 Equipment can be customized to add additional ingredients or properties to the resulting batch.
 
-#### Mash Tun
+#### Masher
 
-IRL: Produces wort from grain and water.
+IRL: Mash Tun + Lauter Tun
+Mash Tun produces wort from grain and water.
+Lauter Tun separates wort and grain.
 In-game: entry point for the grain.
-
-#### Lauter Tun
-
-IRL: Separates wort and grain.
-In-game: TBD.
 
 #### Kettle
 
@@ -107,11 +104,11 @@ In-game: entry point for hops (optional).
 IRL: Adds yeast, starting fermenting process. Hops can be added.
 In-game: entry point for yeast. Entry point for hops (optional).
 
-#### Filter
+#### [TBD] Filter
 
 IRL: Filters fermented beer.
 In-game: TBD.
 
 ### Storage unit
 
-In-game: stores beer unitl it is sold.
+In-game: stores beer until it is sold.
