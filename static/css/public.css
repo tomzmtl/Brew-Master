@@ -12,7 +12,20 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.75); }
+  padding: 100px;
+  background: rgba(28, 25, 18, 0.9); }
+  .overlay .modal {
+    height: 100%;
+    background: #332918; }
+    .overlay .modal table {
+      margin-top: 30px;
+      width: 60%; }
+      .overlay .modal table th {
+        text-align: left; }
+      .overlay .modal table tbody tr:nth-child(odd) {
+        background: rgba(0, 0, 0, 0.1); }
+      .overlay .modal table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.2); }
 
 li {
   list-style-type: none; }

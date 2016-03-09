@@ -9,16 +9,36 @@ body {
 }
 
 .overlay {
-  //display: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.75);
+  padding: 100px;
+  background: rgba(28, 25, 18, 0.9);
 
   .modal {
-    //display: none;
+    height: 100%;
+    background: #332918;
+
+    table {
+      margin-top: 30px;
+      width: 60%;
+
+      th {
+        text-align: left;
+      }
+
+      tbody {
+        tr:nth-child(odd) {
+          background: rgba(0,0,0,0.1);
+        }
+
+        tr:nth-child(even) {
+          background: rgba(0,0,0,0.2);
+        }
+      }
+    }
   }
 }
 

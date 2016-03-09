@@ -5,6 +5,7 @@ import { closeModal } from '../actions/actions';
 const mapStateToProps = (state) => {
   return {
     activeModal: state.modal,
+    items: state.marketplace.items,
   };
 };
 

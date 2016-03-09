@@ -1,5 +1,5 @@
 import React from 'react';
-import Marketplace from './Marketplace'; // eslint-disable-line no-unused-vars
+import Marketplace from './Marketplace';
 
 const Modal = (props) => {
   if (props.activeModal === null) {
@@ -8,6 +8,7 @@ const Modal = (props) => {
 
   const modalProps = {
     onCloseClick: props.onCloseClick,
+    items: props.items,
   };
 
   return (
