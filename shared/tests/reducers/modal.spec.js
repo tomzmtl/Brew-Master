@@ -8,24 +8,6 @@ import mockStore from '../_mocks/store';
 
 describe('Modal', () => {
 
-  it('opens', () => {
-    const modal = 'TestModal';
-    const stateBefore = mockStore();
-    const stateAfter = mockStore({
-      modal,
-    });
-
-    const action = {
-      type: ACTIONS.OPEN_MODAL,
-      modal,
-    };
-
-    deepFreeze(stateBefore);
-    deepFreeze(action);
-
-    expect(stateAfter).toEqual(reducer(stateBefore, action));
-  });
-
   it('closes', () => {
     const stateBefore = mockStore({
       modal: 'TestModal',

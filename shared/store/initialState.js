@@ -6,20 +6,7 @@ const state = {
     items: [],
   },
   marketplace: {
-    items: [
-      {
-        name: 'Marketplace item 1',
-        price: 100,
-      },
-      {
-        name: 'Marketplace item 2',
-        price: 200,
-      },
-      {
-        name: 'Marketplace item 3',
-        price: 50,
-      },
-    ],
+    items: null,
   },
   modal: null,
   tick: 1,

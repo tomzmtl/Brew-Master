@@ -1,11 +1,11 @@
-const item = { name: 'Mocked inventory item' };
+const item = { name: 'Mocked inventory item', price: 100 };
 
 const mockInventoryItem = () => Object.assign({}, item);
 
 const mockInventoryItemSet = (count) => {
   const set = [];
   for (let i = 0; i < count; i++) {
-    set.push(Object.assign({}, item));
+    set.push(mockInventoryItem());
   }
   return set;
 };

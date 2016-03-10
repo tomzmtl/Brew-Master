@@ -3,21 +3,29 @@ import deepFreeze from 'deep-freeze';
 import reducer from '../../reducers/reducer';
 
 import * as ACTIONS from '../../constants/actionTypes';
+import * as GAME from '../../constants/gameConstants';
+import * as MODALS from '../../constants/modals';
 
 import mockStore from '../_mocks/store';
+import { mockInventoryItemSet } from '../_mocks/inventoryItem';
 
 describe('Marketplace', () => {
 
-  it('opens (modal)', () => {
-    const modal = 'Marketplace';
-    const stateBefore = mockStore();
+  it('opens', () => {
+    const stateBefore = mockStore({
+      marketplace: {
+        items: [],
+      },
+    });
     const stateAfter = mockStore({
-      modal,
+      modal: MODALS.MARKETPLACE,
+      marketplace: {
+        items: [],
+      },
     });
 
     const action = {
-      type: ACTIONS.OPEN_MODAL,
-      modal,
+      type: ACTIONS.OPEN_MARKETPLACE_MODAL,
     };
 
     deepFreeze(stateBefore);
@@ -26,13 +34,12 @@ describe('Marketplace', () => {
     expect(stateAfter).toEqual(reducer(stateBefore, action));
   });
 
-  it('closes (modal)', () => {
-    const modal = null;
+  it('closes', () => {
     const stateBefore = mockStore({
-      modal: 'Marketplace',
+      modal: MODALS.MARKETPLACE,
     });
     const stateAfter = mockStore({
-      modal,
+      modal: null,
     });
 
     const action = {
@@ -43,6 +50,34 @@ describe('Marketplace', () => {
     deepFreeze(action);
 
     expect(stateAfter).toEqual(reducer(stateBefore, action));
+  });
+
+  it('is populated when opened for the first time', () => {
+    const items = mockInventoryItemSet(GAME.MARKETPLACE_ITEMS_LIMIT);
+    const stateBefore = mockStore();
+    const stateAfter = mockStore({
+      modal: MODALS.MARKETPLACE,
+      marketplace: {
+        items,
+      },
+    });
+
+    const action = {
+      type: ACTIONS.OPEN_MARKETPLACE_MODAL,
+    };
+
+    deepFreeze(stateBefore);
+    deepFreeze(action);
+
+    const result = reducer(stateBefore, action).marketplace;
+
+    expect(stateAfter.marketplace.items.length)
+      .toEqual(result.items.length);
+
+    result.items.forEach((item) => {
+      expect(item.name).toBeA('string');
+      expect(item.price).toBeA('number');
+    });
   });
 
 });

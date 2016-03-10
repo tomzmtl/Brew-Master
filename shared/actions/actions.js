@@ -30,9 +30,9 @@ const addInventoryItem = (item) => {
   };
 };
 
-const openModal = (modal) => {
+const openMarketplace = (modal) => {
   return {
-    type: ACTIONS.OPEN_MODAL,
+    type: ACTIONS.OPEN_MARKETPLACE_MODAL,
     modal,
   };
 };
@@ -43,11 +43,18 @@ const closeModal = () => {
   };
 };
 
+const populateMarketplace = () => {
+  return {
+    type: ACTIONS.POPULATE_MARKETPLACE,
+  };
+};
+
 export {
   incrementTick,
   storeBeer,
   sellBeer,
   addInventoryItem,
-  openModal,
+  openMarketplace,
   closeModal,
+  populateMarketplace,
 };

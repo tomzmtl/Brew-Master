@@ -1,6 +1,7 @@
 import * as ACTIONS from '../constants/actionTypes';
 import * as GAME from '../constants/gameConstants';
 import sellBeer from './helpers/sellBeer';
+import marketplace from './marketplace';
 
 const reducer = (state = {}, action) => {
   const { facility, inventory } = state;
@@ -39,8 +40,8 @@ const reducer = (state = {}, action) => {
         },
       });
 
-    case ACTIONS.OPEN_MODAL:
-      return Object.assign({}, state, { modal: action.modal });
+    case ACTIONS.OPEN_MARKETPLACE_MODAL:
+      return marketplace(state, action);
 
     case ACTIONS.CLOSE_MODAL:
       return Object.assign({}, state, { modal: null });
