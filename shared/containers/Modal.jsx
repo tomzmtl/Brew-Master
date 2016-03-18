@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
   return {
     activeModal: state.modal,
     items: state.marketplace.items,
+    wallet: state.wallet,
   };
 };
 

@@ -58,6 +58,9 @@ const reducer = (state = {}, action) => {
   function buyMarketPlaceItem() {
     const items = state.marketplace.items.slice();
     const item = pullAt(items, action.item)[0];
+    if (state.wallet < item.price) {
+      return state;
+    }
     return createNewState({
       wallet: state.wallet - item.price,
       inventory: {

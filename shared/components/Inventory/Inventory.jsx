@@ -23,7 +23,6 @@ const Inventory = (props) => {
   return (
     <div className="inventory">
       <ul className="items">{items}</ul>
-      <button onClick={props.onBtnClick}>Add Inventory Item</button>
     </div>
   );
 };

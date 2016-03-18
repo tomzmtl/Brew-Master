@@ -12,6 +12,7 @@ const Modal = (props) => {
     marketplace: {
       onItemClick: props.onMarketPlaceItemClick,
     },
+    wallet: props.wallet,
   };
 
   return (

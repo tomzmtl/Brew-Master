@@ -109,4 +109,31 @@ describe('Marketplace', () => {
     expect(stateAfter).toEqual(reducer(stateBefore, action));
   });
 
+  it('can\'t sell an item that\'s too expensive', () => {
+    const items = mockInventoryItemSet(1);
+    items[0].price = 200;
+    const stateBefore = mockStore({
+      marketplace: {
+        items,
+      },
+      wallet: 100,
+    });
+    const stateAfter = mockStore({
+      marketplace: {
+        items,
+      },
+      wallet: 100,
+    });
+
+    const action = {
+      type: ACTIONS.BUY_MARKETPLACE_ITEM,
+      item: 0,
+    };
+
+    deepFreeze(stateBefore);
+    deepFreeze(action);
+
+    expect(stateAfter).toEqual(reducer(stateBefore, action));
+  });
+
 });

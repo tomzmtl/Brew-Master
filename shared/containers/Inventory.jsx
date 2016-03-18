@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Inventory from '../components/Inventory/Inventory';
-import { addInventoryItem } from '../actions/actions';
+// import { addInventoryItem } from '../actions/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,15 +8,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onBtnClick: () => {
-      dispatch(addInventoryItem(Object.assign({}, { name: 'Generic Inventory Item' })));
-    },
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {};
+// };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
+  // mapDispatchToProps
 )(Inventory);

@@ -1,14 +1,15 @@
 import React from 'react';
 
-function _buildRows(items, onItemClick) {
+function _buildRows(items, onItemClick, wallet) {
   return items.map((item, i) => {
     const b = () => onItemClick(i);
+    const disabled = wallet < item.price;
     return (
       <tr key={i}>
         <td>{item.name}</td>
-        <td>{item.price}</td>
+        <td>{item.price}$</td>
         <td>
-          <button onClick={b}>Purchase</button>
+          <button onClick={b} disabled={disabled}>Purchase</button>
         </td>
       </tr>
     );
@@ -16,7 +17,7 @@ function _buildRows(items, onItemClick) {
 }
 
 const Marketplace = (props) => {
-  const rows = _buildRows(props.items, props.marketplace.onItemClick);
+  const rows = _buildRows(props.items, props.marketplace.onItemClick, props.wallet);
 
   return (
     <div className="modal">
