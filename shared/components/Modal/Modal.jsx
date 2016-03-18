@@ -9,6 +9,9 @@ const Modal = (props) => {
   const modalProps = {
     onCloseClick: props.onCloseClick,
     items: props.items,
+    marketplace: {
+      onItemClick: props.onMarketPlaceItemClick,
+    },
   };
 
   return (

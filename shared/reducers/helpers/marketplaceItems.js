@@ -1,8 +1,9 @@
+import { random } from 'lodash';
 
 function generateItem() {
   return {
     name: 'Marketplace item',
-    price: 100,
+    price: random(5, 20) * 10,
   };
 }
 

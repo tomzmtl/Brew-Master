@@ -80,4 +80,33 @@ describe('Marketplace', () => {
     });
   });
 
+  it('sells a marketplace item', () => {
+    const items = mockInventoryItemSet(1);
+    const stateBefore = mockStore({
+      marketplace: {
+        items,
+      },
+      wallet: items[0].price,
+    });
+    const stateAfter = mockStore({
+      marketplace: {
+        items: [],
+      },
+      inventory: {
+        items,
+      },
+      wallet: 0,
+    });
+
+    const action = {
+      type: ACTIONS.BUY_MARKETPLACE_ITEM,
+      item: 0,
+    };
+
+    deepFreeze(stateBefore);
+    deepFreeze(action);
+
+    expect(stateAfter).toEqual(reducer(stateBefore, action));
+  });
+
 });

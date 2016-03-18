@@ -1,7 +1,9 @@
 import * as ACTIONS from '../constants/actionTypes';
 import * as GAME from '../constants/gameConstants';
+import * as MODALS from '../constants/modals';
 import sellBeer from './helpers/sellBeer';
-import marketplace from './marketplace';
+import marketplaceItems from './helpers/marketplaceItems';
+import { pullAt } from 'lodash';
 
 const reducer = (state = {}, action) => {
   const { facility, inventory } = state;
@@ -41,7 +43,27 @@ const reducer = (state = {}, action) => {
       });
 
     case ACTIONS.OPEN_MARKETPLACE_MODAL:
-      return marketplace(state, action);
+      const newState = { modal: MODALS.MARKETPLACE };
+
+      if (state.marketplace.items === null) {
+        newState.marketplace = {
+          items: marketplaceItems(GAME.MARKETPLACE_ITEMS_LIMIT),
+        };
+      }
+      return Object.assign({}, state, newState);
+
+    case ACTIONS.BUY_MARKETPLACE_ITEM:
+      const items = state.marketplace.items.slice();
+      const item = pullAt(items, action.item)[0];
+      return Object.assign({}, state, {
+        wallet: state.wallet - item.price,
+        inventory: {
+          items: [...state.inventory.items, item],
+        },
+        marketplace: {
+          items,
+        },
+      });
 
     case ACTIONS.CLOSE_MODAL:
       return Object.assign({}, state, { modal: null });

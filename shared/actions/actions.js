@@ -49,6 +49,13 @@ const populateMarketplace = () => {
   };
 };
 
+const buyMarketPlaceItem = (item) => {
+  return {
+    type: ACTIONS.BUY_MARKETPLACE_ITEM,
+    item,
+  };
+};
+
 export {
   incrementTick,
   storeBeer,
@@ -57,4 +64,5 @@ export {
   openMarketplace,
   closeModal,
   populateMarketplace,
+  buyMarketPlaceItem,
 };

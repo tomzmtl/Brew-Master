@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Modal from '../components/Modal/Modal';
-import { closeModal } from '../actions/actions';
+import { closeModal, buyMarketPlaceItem } from '../actions/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -13,6 +13,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onCloseClick: () => {
       dispatch(closeModal());
+    },
+    onMarketPlaceItemClick: (i) => {
+      dispatch(buyMarketPlaceItem(i));
     },
   };
 };
