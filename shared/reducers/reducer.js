@@ -3,7 +3,7 @@ import * as GAME from '../constants/gameConstants';
 import * as MODALS from '../constants/modals';
 import sellBeer from './helpers/sellBeer';
 import marketplaceItems from './helpers/marketplaceItems';
-import { pullAt } from 'lodash';
+import { pullAt, assign } from 'lodash';
 
 const reducer = (state = {}, action) => {
   const { facility, inventory } = state;
@@ -14,29 +14,29 @@ const reducer = (state = {}, action) => {
       let update = { tick: state.tick + 1 };
 
       if (update.tick % GAME.SALE_INTERVAL === 0) {
-        update = Object.assign(update, sellBeer(state));
+        update = assign(update, sellBeer(state));
       }
 
-      return Object.assign({}, state, update);
+      return assign({}, state, update);
 
     case ACTIONS.STORE_BEER:
       if (facility.storage.length >= GAME.STORAGE_LIMIT) {
         return state;
       }
-      return Object.assign({}, state, {
+      return assign({}, state, {
         facility: {
           storage: [...facility.storage, action.beer],
         },
       });
 
     case ACTIONS.SELL_BEER:
-      return Object.assign({}, state, sellBeer(state));
+      return assign({}, state, sellBeer(state));
 
     case ACTIONS.ADD_INVENTORY_ITEM:
       if (inventory.items.length >= GAME.INVENTORY_LIMIT) {
         return state;
       }
-      return Object.assign({}, state, {
+      return assign({}, state, {
         inventory: {
           items: [...inventory.items, action.item],
         },
@@ -50,12 +50,12 @@ const reducer = (state = {}, action) => {
           items: marketplaceItems(GAME.MARKETPLACE_ITEMS_LIMIT),
         };
       }
-      return Object.assign({}, state, newState);
+      return assign({}, state, newState);
 
     case ACTIONS.BUY_MARKETPLACE_ITEM:
       const items = state.marketplace.items.slice();
       const item = pullAt(items, action.item)[0];
-      return Object.assign({}, state, {
+      return assign({}, state, {
         wallet: state.wallet - item.price,
         inventory: {
           items: [...state.inventory.items, item],
@@ -66,7 +66,7 @@ const reducer = (state = {}, action) => {
       });
 
     case ACTIONS.CLOSE_MODAL:
-      return Object.assign({}, state, { modal: null });
+      return assign({}, state, { modal: null });
 
     default:
       return state;
