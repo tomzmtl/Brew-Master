@@ -23,12 +23,14 @@ const sellBeer = (quantity) => {
   };
 };
 
+/*
 const addInventoryItem = (item) => {
   return {
     type: ACTIONS.ADD_INVENTORY_ITEM,
     item,
   };
 };
+*/
 
 const openMarketplace = (modal) => {
   return {
@@ -43,12 +45,6 @@ const closeModal = () => {
   };
 };
 
-const populateMarketplace = () => {
-  return {
-    type: ACTIONS.POPULATE_MARKETPLACE,
-  };
-};
-
 const buyMarketPlaceItem = (item) => {
   return {
     type: ACTIONS.BUY_MARKETPLACE_ITEM,
@@ -60,9 +56,8 @@ export {
   incrementTick,
   storeBeer,
   sellBeer,
-  addInventoryItem,
+  // addInventoryItem,
   openMarketplace,
   closeModal,
-  populateMarketplace,
   buyMarketPlaceItem,
 };

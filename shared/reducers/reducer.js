@@ -1,14 +1,14 @@
 import * as ACTIONS from '../constants/actionTypes';
 import * as GAME from '../constants/gameConstants';
 import * as MODALS from '../constants/modals';
-import marketplaceItems from '../../game/factories/marketplaceItems';
 import { pullAt, assign } from 'lodash';
 import Utils from './utils';
+import debugReducer from './debug';
 
 const reducer = (state = {}, action) => {
 
   // shorcuts
-  const { facility, inventory } = state;
+  const { facility } = state;
 
   function createNewState(extend = {}) {
     return assign({}, state, extend);
@@ -33,6 +33,7 @@ const reducer = (state = {}, action) => {
     });
   }
 
+/*
   function addInventoryItem() {
     if (inventory.items.length >= GAME.INVENTORY_LIMIT) {
       return state;
@@ -43,19 +44,21 @@ const reducer = (state = {}, action) => {
       },
     });
   }
+*/
 
   function openMarketPlaceModal() {
     const newState = { modal: MODALS.MARKETPLACE };
 
     if (state.marketplace.items === null) {
-      newState.marketplace = {
-        items: marketplaceItems(GAME.MARKETPLACE_ITEMS_LIMIT),
-      };
+      newState.marketplace = { items: Utils.populateMarketplace(state) };
     }
     return createNewState(newState);
   }
 
   function buyMarketPlaceItem() {
+    if (state.inventory.items.length === GAME.INVENTORY_LIMIT) {
+      return state;
+    }
     const items = state.marketplace.items.slice();
     const item = pullAt(items, action.item)[0];
     if (state.wallet < item.price) {
@@ -87,8 +90,8 @@ const reducer = (state = {}, action) => {
     case ACTIONS.SELL_BEER:
       return createNewState(Utils.sellBeer(state));
 
-    case ACTIONS.ADD_INVENTORY_ITEM:
-      return addInventoryItem();
+    // case ACTIONS.ADD_INVENTORY_ITEM:
+    //  return addInventoryItem();
 
     case ACTIONS.OPEN_MARKETPLACE_MODAL:
       return openMarketPlaceModal();
@@ -99,9 +102,16 @@ const reducer = (state = {}, action) => {
     case ACTIONS.CLOSE_MODAL:
       return createNewState({ modal: null });
 
-    default:
-      return state;
+    default: break;
   }
+
+  const newState = debugReducer(state, action);
+
+  if (newState) {
+    return newState;
+  }
+
+  return state;
 };
 
 export default reducer;

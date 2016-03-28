@@ -1,4 +1,5 @@
 import * as GAME from '../constants/gameConstants';
+import marketplaceItems from '../../game/factories/marketplaceItems';
 
 export default {
 
@@ -7,5 +8,22 @@ export default {
       facility: { storage: [] },
       wallet: state.wallet + (state.facility.storage.length * GAME.BEER_PRICE),
     };
+  },
+
+  populateMarketplace(state) {
+    let fill;
+    const isInitial = state.marketplace.items === null;
+    if (isInitial) {
+      fill = GAME.MARKETPLACE_ITEMS_LIMIT;
+    } else {
+      fill = GAME.MARKETPLACE_ITEMS_LIMIT - state.marketplace.items.length;
+    }
+    const items = marketplaceItems(fill);
+
+    if (isInitial) {
+      return items;
+    }
+
+    return [...state.marketplace.items, ...items];
   },
 };

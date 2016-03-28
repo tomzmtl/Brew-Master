@@ -4,7 +4,8 @@ body {
 
 .root {
   position: relative;
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
 
 .overlay {
   position: absolute;
@@ -81,6 +82,18 @@ li {
       height: inherit;
       background: white;
       color: black; }
+
+.debug-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(100%);
+  transition: 300ms ease-out; }
+  .debug-panel[data-visible="true"] {
+    transform: translateY(0); }
 
 button {
   padding: 10px;
