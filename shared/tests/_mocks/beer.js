@@ -1,4 +1,4 @@
-import beer from '../../../game/factories/beer';
+import beer from '../../game/factories/beer';
 import { random } from 'lodash';
 
 const types = [

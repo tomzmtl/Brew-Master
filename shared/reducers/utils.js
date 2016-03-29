@@ -1,5 +1,5 @@
-import * as GAME from '../constants/gameConstants';
-import marketplaceItems from '../../game/factories/marketplaceItems';
+import * as GAME from '../constants/game';
+import marketplaceItems from '../game/factories/marketplaceItems';
 
 export default {
 

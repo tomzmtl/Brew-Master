@@ -1,5 +1,5 @@
 import React from 'react';
-import * as GAME from '../../constants/gameConstants';
+import * as GAME from '../../constants/game';
 
 function _buildStorageItems(storage) {
   const items = [];

@@ -3,7 +3,7 @@ import deepFreeze from 'deep-freeze';
 import reducer from '../../reducers/reducer';
 
 import * as ACTIONS from '../../constants/actionTypes';
-import * as GAME from '../../constants/gameConstants';
+import * as GAME from '../../constants/game';
 import * as MODALS from '../../constants/modals';
 
 import mockStore from '../_mocks/store';

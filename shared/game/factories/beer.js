@@ -5,7 +5,7 @@ const prototype = {
   ibu: null,
 };
 
-const factory = (type, color, strength, ibu) => {
+const brew = (type, color, strength, ibu) => {
   return Object.assign({}, prototype, {
     type,
     color,
@@ -14,4 +14,9 @@ const factory = (type, color, strength, ibu) => {
   });
 };
 
-export default factory;
+const brewRandom = () => {
+
+};
+
+export default brew;
+// export default { brew, brewRandom };

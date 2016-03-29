@@ -1,5 +1,5 @@
 import * as ACTIONS from '../constants/actionTypes';
-import * as GAME from '../constants/gameConstants';
+import * as GAME from '../constants/game';
 import * as MODALS from '../constants/modals';
 import { pullAt, assign } from 'lodash';
 import Utils from './utils';
