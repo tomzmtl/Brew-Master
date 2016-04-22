@@ -1,4 +1,5 @@
 
+/*
 module B {
   type: null,
   ibu: null,
@@ -67,3 +68,4 @@ getIbu(hs, ht, b) {
 
   return ibu;
 }
+*/

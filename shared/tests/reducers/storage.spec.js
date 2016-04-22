@@ -54,7 +54,7 @@ describe('StorageUnit', () => {
       facility: {
         storage: [],
       },
-      wallet: storage.length * GAME.BEER_PRICE,
+      wallet: storage.length * GAME.BEER.PRICE,
     });
 
     const action = {

@@ -6,7 +6,7 @@ export default {
   sellBeer(state) {
     return {
       facility: { storage: [] },
-      wallet: state.wallet + (state.facility.storage.length * GAME.BEER_PRICE),
+      wallet: state.wallet + (state.facility.storage.length * GAME.BEER.PRICE),
     };
   },
 

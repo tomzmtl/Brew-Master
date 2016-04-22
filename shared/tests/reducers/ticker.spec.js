@@ -33,7 +33,7 @@ describe('Ticker', () => {
       facility: {
         storage: [],
       },
-      wallet: storage.length * GAME.BEER_PRICE,
+      wallet: storage.length * GAME.BEER.PRICE,
     });
 
     const action = { type: ACTIONS.INCREMENT_TICK };
