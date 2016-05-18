@@ -1,8 +1,9 @@
 # Brew Master
-
 ## A game about brewing beer! Awesome!
 
 ### Status
+
+[![Build Status](https://travis-ci.org/tomzmtl/Brew-Master.svg?branch=master)](https://travis-ci.org/tomzmtl/Brew-Master)
 
 Current version: `Alpha 8`.
 **Next release:** `Alpha 9`.
