@@ -5,11 +5,11 @@
 
 [![Build Status](https://travis-ci.org/tomzmtl/Brew-Master.svg?branch=master)](https://travis-ci.org/tomzmtl/Brew-Master)
 
-Current version: `Alpha 8`.
-**Next release:** `Alpha 9`.
+| **Current version** | `Alpha 8` |
+| **Next release**    | `Alpha 9` |
 
-[Milestones](https://github.com/tomzmtl/Brew-Master/tree/master/docs/milestones).
-[General specs](https://github.com/tomzmtl/Brew-Master/tree/master/docs/general).
+* [Milestones](https://github.com/tomzmtl/Brew-Master/tree/master/docs/milestones).
+* [General specs](https://github.com/tomzmtl/Brew-Master/tree/master/docs/general).
 
 
 ### Technology stack
