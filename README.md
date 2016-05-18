@@ -4,14 +4,11 @@
 
 ### Status
 
-Writing specs. See the [docs](https://github.com/tomzmtl/Brew-Master/tree/master/docs) folder.
+Current version: `Alpha 8`.
+**Next release:** `Alpha 9`.
 
-
-### Roadmap
-
-**Next release:** Alpha 1
-
-See release and roadmap details in the [Roadmap documentation](https://github.com/tomzmtl/Brew-Master/blob/master/docs/0__Roadmap.md)
+[Milestones](https://github.com/tomzmtl/Brew-Master/tree/master/docs/milestones).
+[General specs](https://github.com/tomzmtl/Brew-Master/tree/master/docs/general).
 
 
 ### Technology stack
