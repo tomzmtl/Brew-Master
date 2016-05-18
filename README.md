@@ -5,7 +5,7 @@
 
 [![Build Status](https://travis-ci.org/tomzmtl/Brew-Master.svg?branch=master)](https://travis-ci.org/tomzmtl/Brew-Master)
 
-Version |
+Version | #
 ------- | ---
 Current | `Alpha 8`
 Next    | `Alpha 9`
